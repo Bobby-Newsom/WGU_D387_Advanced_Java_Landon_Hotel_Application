@@ -18,6 +18,9 @@ export class AppComponent implements OnInit{
   englishMessage$!: Observable<string>
   frenchMessage$!: Observable<string>
 
+  presentationAnnouncement$!: Observable<string>
+
+
   constructor(private httpClient:HttpClient){}
 
   private baseURL:string='http://localhost:8080';
@@ -34,6 +37,8 @@ export class AppComponent implements OnInit{
     ngOnInit(){
       this.englishMessage$ = this.httpClient.get(this.baseURL + '/api/welcome/en/',{responseType: 'text'})
       this.frenchMessage$ = this.httpClient.get(this.baseURL + '/api/welcome/fr/',{responseType: 'text'})
+
+      this.presentationAnnouncement$ = this.httpClient.get(this.baseURL + '/api/presentation/', {responseType: 'text'})
 
 
 
