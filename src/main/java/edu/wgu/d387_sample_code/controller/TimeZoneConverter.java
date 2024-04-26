@@ -27,7 +27,7 @@ public class TimeZoneConverter {
         //UTC
         ZonedDateTime utc = zonedDateTime.withZoneSameInstant(ZoneId.of("UTC"));
 
-        String presentationTimes = est.format(dateTimeFormatter) + " EST, " + mst.format(dateTimeFormatter) + " MST, "
+        String presentationTimes = est.format(dateTimeFormatter) + " EST | " + mst.format(dateTimeFormatter) + " MST | "
                 + utc.format(dateTimeFormatter) + " UTC";
 
         return presentationTimes;
